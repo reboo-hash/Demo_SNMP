@@ -47,8 +47,8 @@ sudo service snmpd restart
 snmpwalk -v 2c -c public localhost
 ```
 ## Para hacer que SNMP sea accesible desde cualquier otro cliente en la red y no solo desde localhost, sigue estos pasos adicionales:
-##Paso 4: Configuración de SNMP para Acceso desde Otros Clientes
-###4.1. Abre el archivo de configuración SNMP:
+## Paso 4: Configuración de SNMP para Acceso desde Otros Clientes
+### 4.1. Abre el archivo de configuración SNMP:
 ```bash
 sudo nano /etc/snmp/snmpd.conf
 ```
