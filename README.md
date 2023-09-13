@@ -52,15 +52,15 @@ snmpwalk -v 2c -c public localhost
 ```bash
 sudo nano /etc/snmp/snmpd.conf
 ```
-## 4.2. Cambia la comunidad "public" por una comunidad más segura. Por ejemplo, puedes crear una comunidad llamada "mi_comunidad_segura" y definir una cadena de acceso adecuada:
-```bash
-rocommunity mi_comunidad_segura
-```
-## 4.3. Además, considera configurar restricciones de acceso basadas en direcciones IP para limitar el acceso solo a las máquinas que deben tenerlo. Agrega una línea como esta para permitir el acceso solo a una dirección IP específica (reemplaza "192.168.1.2" con la dirección IP del cliente que deseas permitir):
+## 4.2. Cambia la comunidad "public" por una comunidad más segura. Por ejemplo, puedes crear una comunidad llamada "mi_comunidad_segura" y definir una cadena de acceso adecuada, además, considera configurar restricciones de acceso basadas en direcciones IP para limitar el acceso solo a las máquinas que deben tenerlo. Agrega una línea como esta para permitir el acceso solo a una dirección IP específica (reemplaza "xxx.xxx.xxx" con la dirección IP del cliente que deseas permitir):
 ```bash
 access mi_comunidad_segura xxx.xxx.xxx
 ```
-## 4.4. Asegúrate de que tu firewall permita el tráfico SNMP desde otras máquinas en la red hacia esta máquina. Puedes abrir el puerto UDP 161 en tu firewall.
+## 4.3 Cambia el agentaddress (127.0.0.1) por la direccion de interfaz de red (0.0.0.0) para que escuche en todas las interfaces.
+## 4.4. Asegúrate de que tu firewall permita el tráfico SNMP desde otras máquinas en la red hacia esta máquina. Puedes abrir el puerto UDP 161 en tu firewall. (Realizarlo en las dos maquinas para seguridad)
+```bash
+sudo ufw allow 161/udp
+```
 ## 4.5. Reinicia el servicio SNMP:
 ```bash
 sudo service snmpd restart
