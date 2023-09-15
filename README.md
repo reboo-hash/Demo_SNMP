@@ -61,6 +61,9 @@ access mi_comunidad_segura xxx.xxx.xxx
 ```bash
 sudo ufw allow 161/udp
 ```
+### Este comando se usa en la pc cliente
+## snmpwalk -v2c -c comunidad 192.168.175.159 
+
 ## 4.5. Reinicia el servicio SNMP:
 ```bash
 sudo service snmpd restart
